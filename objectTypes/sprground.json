@@ -1,0 +1,20 @@
+{
+	"name": "sprGround",
+	"plugin-id": "TiledBg",
+	"sid": 478486752751885,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 20,
+		"height": 20,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 9881742,
+		"useCollisionPoly": true
+	}
+}
