@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 27602,
+	"savedWithRelease": 28500,
 	"name": "University Project 2022",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -11,7 +11,7 @@
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
-			"version": "r276.2",
+			"version": "r285",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r276.2",
+			"version": "r285",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r276.2",
+			"version": "r285",
 			"bundled": false
 		},
 		{
@@ -36,6 +36,30 @@
 			"name": "VS Code Plugin",
 			"author": "Edward Bonnett",
 			"version": "1.0.0.1",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r285",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
+			"author": "Scirra",
+			"version": "r285",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r285",
 			"bundled": false
 		}
 	],
@@ -47,14 +71,20 @@
 			"sprPerson",
 			"sprBuilding",
 			"Mouse",
-			"VSCodePlugin"
+			"VSCodePlugin",
+			"sprNodeVisualizer",
+			"sprLiftShaft",
+			"sprNodeConnector",
+			"txtLabel"
 		],
 		"subfolders": []
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"famBuilding"
+		],
 		"subfolders": []
 	},
 	"layouts": {
@@ -98,6 +128,30 @@
 					"name": "globals.js",
 					"type": "application/javascript",
 					"sid": 603192813526098,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "nodes.js",
+					"type": "application/javascript",
+					"sid": 366082497587435,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "generatingGraph.js",
+					"type": "application/javascript",
+					"sid": 529578655045163,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ut.js",
+					"type": "application/javascript",
+					"sid": 270249105352710,
 					"script-info": {
 						"purpose": "none"
 					}
@@ -206,6 +260,8 @@
 		"authorWebsite": "",
 		"appId": "",
 		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",

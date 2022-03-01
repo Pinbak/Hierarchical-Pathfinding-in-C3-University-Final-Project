@@ -1,0 +1,12 @@
+{
+	"name": "famBuilding",
+	"plugin-id": "Sprite",
+	"sid": 708842501337050,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"sprBuilding",
+		"sprLiftShaft"
+	]
+}

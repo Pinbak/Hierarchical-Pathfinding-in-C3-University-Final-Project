@@ -1,4 +1,5 @@
 import Globals from "./globals.js";
+import * as Generating from "./generatingGraph.js";
 
 // what happens when the mouse is clicked
 export function OnMouseDown(e, runtime){
@@ -9,7 +10,9 @@ export function OnMouseDown(e, runtime){
 
     // check for left mouse button
     if (e.button === 0){
-        return;
+        Generating.buildEdges(runtime);
+        Generating.visualizeNodes(runtime);
+        Generating.buildGraph(runtime);
     }
 }
 

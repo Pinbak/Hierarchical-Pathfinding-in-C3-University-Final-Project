@@ -1,52 +1,29 @@
 {
-	"name": "sprBuilding",
+	"name": "sprNodeVisualizer",
 	"plugin-id": "Sprite",
-	"sid": 754286127865800,
+	"sid": 613784413577385,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "LOS",
-			"name": "LineOfSight",
-			"sid": 589196516251156
-		},
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 480049086642132
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 10,
-						"height": 40,
+						"width": 8,
+						"height": 8,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8595321,
-						"collisionPoly": {
-							"points": [
-								0,
-								0.025,
-								1,
-								0.025,
-								1,
-								0.975,
-								0,
-								0.975
-							]
-						},
+						"imageSpriteId": 6343183,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 747773726374435,
+				"sid": 341279240737270,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

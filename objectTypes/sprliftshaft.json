@@ -1,52 +1,29 @@
 {
-	"name": "sprBuilding",
+	"name": "sprLiftShaft",
 	"plugin-id": "Sprite",
-	"sid": 754286127865800,
+	"sid": 491978430351304,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "LOS",
-			"name": "LineOfSight",
-			"sid": 589196516251156
-		},
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 480049086642132
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 10,
+						"width": 30,
 						"height": 40,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8595321,
-						"collisionPoly": {
-							"points": [
-								0,
-								0.025,
-								1,
-								0.025,
-								1,
-								0.975,
-								0,
-								0.975
-							]
-						},
+						"imageSpriteId": 481657,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 747773726374435,
+				"sid": 714727249638915,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

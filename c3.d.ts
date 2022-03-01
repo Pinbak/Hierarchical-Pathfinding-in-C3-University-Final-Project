@@ -1,5 +1,5 @@
 // NOTE: This definition file is auto generated - any changes you make will not be saved
-// 2/23/2022 12:02:45 AM
+// 01/03/2022 02:12:55
 
 declare function runOnStartup(cb: (runtime: IRuntime) => void): void;
 
@@ -43,11 +43,16 @@ type VariableType = Record<string, string | boolean | number | null | undefined>
 
 interface IRuntimeObjects {
 	['VSCodePlugin']: IObjectClass<IVSCodePlugin>;
+	['txtLabel']: IObjectClass<ItxtLabel>;
 	['sprRoom']: IObjectClass<IsprRoom>;
 	['sprPerson']: IObjectClass<IsprPerson>;
+	['sprNodeVisualizer']: IObjectClass<IsprNodeVisualizer>;
+	['sprNodeConnector']: IObjectClass<IsprNodeConnector>;
 	['sprGround']: IObjectClass<IsprGround>;
-	['sprBuilding']: IObjectClass<IsprBuilding>;
 	['Mouse']: IObjectClass<IMouse>;
+	['sprLiftShaft']: IObjectClass<IsprLiftShaft>;
+	['sprBuilding']: IObjectClass<IsprBuilding>;
+	['famBuilding']: IObjectClass<IfamBuilding>;
 }
 
 interface IGlobalVars extends VariableType {
@@ -184,6 +189,17 @@ interface IVSCodePlugin extends IWorldInstance {
 	behaviors: IVSCodePluginBehaviors;
 }
 
+interface ItxtLabelVars extends VariableType {
+	
+}
+interface ItxtLabelBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface ItxtLabel extends ITextInstance {
+	instVars: ItxtLabelVars;
+	behaviors: ItxtLabelBehaviors;
+}
+
 interface IsprRoomVars extends VariableType {
 	
 }
@@ -206,6 +222,28 @@ interface IsprPerson extends ISpriteInstance {
 	behaviors: IsprPersonBehaviors;
 }
 
+interface IsprNodeVisualizerVars extends VariableType {
+	
+}
+interface IsprNodeVisualizerBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IsprNodeVisualizer extends ISpriteInstance {
+	instVars: IsprNodeVisualizerVars;
+	behaviors: IsprNodeVisualizerBehaviors;
+}
+
+interface IsprNodeConnectorVars extends VariableType {
+	
+}
+interface IsprNodeConnectorBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IsprNodeConnector extends ISpriteInstance {
+	instVars: IsprNodeConnectorVars;
+	behaviors: IsprNodeConnectorBehaviors;
+}
+
 interface IsprGroundVars extends VariableType {
 	
 }
@@ -217,17 +255,6 @@ interface IsprGround extends IWorldInstance {
 	behaviors: IsprGroundBehaviors;
 }
 
-interface IsprBuildingVars extends VariableType {
-	
-}
-interface IsprBuildingBehaviors extends Record<string, IBehaviorInstance> {
-	
-}
-interface IsprBuilding extends ISpriteInstance {
-	instVars: IsprBuildingVars;
-	behaviors: IsprBuildingBehaviors;
-}
-
 interface IMouseVars extends VariableType {
 	
 }
@@ -237,6 +264,40 @@ interface IMouseBehaviors extends Record<string, IBehaviorInstance> {
 interface IMouse extends IMouseObjectType {
 	instVars: IMouseVars;
 	behaviors: IMouseBehaviors;
+}
+
+interface IsprLiftShaftVars extends VariableType {
+	
+}
+interface IsprLiftShaftBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IsprLiftShaft extends ISpriteInstance {
+	instVars: IsprLiftShaftVars;
+	behaviors: IsprLiftShaftBehaviors;
+}
+
+interface IsprBuildingVars extends VariableType {
+	
+}
+interface IsprBuildingBehaviors extends Record<string, IBehaviorInstance> {
+	['LineOfSight']: ILOSBehaviorInstance
+	['Solid']: IBehaviorInstance
+}
+interface IsprBuilding extends ISpriteInstance {
+	instVars: IsprBuildingVars;
+	behaviors: IsprBuildingBehaviors;
+}
+
+interface IfamBuildingVars extends VariableType {
+	
+}
+interface IfamBuildingBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IfamBuilding extends ISpriteInstance {
+	instVars: IfamBuildingVars;
+	behaviors: IfamBuildingBehaviors;
 }
 
 
