@@ -1,10 +1,16 @@
 {
-	"name": "sprLiftShaft",
+	"name": "sprLift",
 	"plugin-id": "Sprite",
-	"sid": 491978430351304,
+	"sid": 212732625132024,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 866464179093909
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -18,25 +24,25 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5110645,
+						"imageSpriteId": 1284777,
 						"collisionPoly": {
 							"points": [
 								0.03333333333333333,
-								0,
+								0.025,
 								0.9666666666666667,
-								0,
+								0.025,
 								0.9666666666666667,
-								1,
+								0.975,
 								0.03333333333333333,
-								1
+								0.975
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 714727249638915,
-				"name": "liftShaft",
+				"sid": 776662935459647,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

@@ -29,7 +29,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8595321,
+						"imageSpriteId": 4868162,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -47,7 +47,7 @@
 					}
 				],
 				"sid": 747773726374435,
-				"name": "Animation 1",
+				"name": "building",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

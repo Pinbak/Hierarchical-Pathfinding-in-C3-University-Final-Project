@@ -1,0 +1,20 @@
+{
+	"name": "famMoveable",
+	"plugin-id": "Sprite",
+	"sid": 710504740456953,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "DragnDrop",
+			"name": "DragDrop",
+			"sid": 881224597630317
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"sprBuilding",
+		"sprLift",
+		"sprLiftShaft",
+		"sprRoom"
+	]
+}

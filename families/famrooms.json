@@ -1,14 +1,13 @@
 {
-	"name": "famBuilding",
+	"name": "famRooms",
 	"plugin-id": "Sprite",
-	"sid": 708842501337050,
+	"sid": 940621431525530,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"sprBuilding",
+		"sprLift",
 		"sprLiftShaft",
-		"sprRoom",
-		"sprGroundFloor"
+		"sprRoom"
 	]
 }

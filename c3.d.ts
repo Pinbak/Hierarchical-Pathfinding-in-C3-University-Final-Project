@@ -1,5 +1,5 @@
 // NOTE: This definition file is auto generated - any changes you make will not be saved
-// 01/03/2022 02:12:55
+// 21/03/2022 18:47:33
 
 declare function runOnStartup(cb: (runtime: IRuntime) => void): void;
 
@@ -43,13 +43,20 @@ type VariableType = Record<string, string | boolean | number | null | undefined>
 
 interface IRuntimeObjects {
 	['VSCodePlugin']: IObjectClass<IVSCodePlugin>;
+	['txtTime']: IObjectClass<ItxtTime>;
 	['txtLabel']: IObjectClass<ItxtLabel>;
-	['sprRoom']: IObjectClass<IsprRoom>;
+	['sprTimeControl']: IObjectClass<IsprTimeControl>;
 	['sprPerson']: IObjectClass<IsprPerson>;
 	['sprNodeVisualizer']: IObjectClass<IsprNodeVisualizer>;
 	['sprNodeConnector']: IObjectClass<IsprNodeConnector>;
 	['sprGround']: IObjectClass<IsprGround>;
+	['sprDragger']: IObjectClass<IsprDragger>;
 	['Mouse']: IObjectClass<IMouse>;
+	['Keyboard']: IObjectClass<IKeyboard>;
+	['sprLift']: IObjectClass<IsprLift>;
+	['famMoveable']: IObjectClass<IfamMoveable>;
+	['sprGroundFloor']: IObjectClass<IsprGroundFloor>;
+	['sprRoom']: IObjectClass<IsprRoom>;
 	['sprLiftShaft']: IObjectClass<IsprLiftShaft>;
 	['sprBuilding']: IObjectClass<IsprBuilding>;
 	['famBuilding']: IObjectClass<IfamBuilding>;
@@ -189,6 +196,17 @@ interface IVSCodePlugin extends IWorldInstance {
 	behaviors: IVSCodePluginBehaviors;
 }
 
+interface ItxtTimeVars extends VariableType {
+	
+}
+interface ItxtTimeBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface ItxtTime extends ITextInstance {
+	instVars: ItxtTimeVars;
+	behaviors: ItxtTimeBehaviors;
+}
+
 interface ItxtLabelVars extends VariableType {
 	
 }
@@ -200,22 +218,22 @@ interface ItxtLabel extends ITextInstance {
 	behaviors: ItxtLabelBehaviors;
 }
 
-interface IsprRoomVars extends VariableType {
+interface IsprTimeControlVars extends VariableType {
 	
 }
-interface IsprRoomBehaviors extends Record<string, IBehaviorInstance> {
+interface IsprTimeControlBehaviors extends Record<string, IBehaviorInstance> {
 	
 }
-interface IsprRoom extends ISpriteInstance {
-	instVars: IsprRoomVars;
-	behaviors: IsprRoomBehaviors;
+interface IsprTimeControl extends ISpriteInstance {
+	instVars: IsprTimeControlVars;
+	behaviors: IsprTimeControlBehaviors;
 }
 
 interface IsprPersonVars extends VariableType {
 	
 }
 interface IsprPersonBehaviors extends Record<string, IBehaviorInstance> {
-	
+	['MoveTo']: IMoveToBehaviorInstance
 }
 interface IsprPerson extends ISpriteInstance {
 	instVars: IsprPersonVars;
@@ -255,6 +273,17 @@ interface IsprGround extends IWorldInstance {
 	behaviors: IsprGroundBehaviors;
 }
 
+interface IsprDraggerVars extends VariableType {
+	
+}
+interface IsprDraggerBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IsprDragger extends ISpriteInstance {
+	instVars: IsprDraggerVars;
+	behaviors: IsprDraggerBehaviors;
+}
+
 interface IMouseVars extends VariableType {
 	
 }
@@ -264,6 +293,61 @@ interface IMouseBehaviors extends Record<string, IBehaviorInstance> {
 interface IMouse extends IMouseObjectType {
 	instVars: IMouseVars;
 	behaviors: IMouseBehaviors;
+}
+
+interface IKeyboardVars extends VariableType {
+	
+}
+interface IKeyboardBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IKeyboard extends IKeyboardObjectType {
+	instVars: IKeyboardVars;
+	behaviors: IKeyboardBehaviors;
+}
+
+interface IsprLiftVars extends VariableType {
+	
+}
+interface IsprLiftBehaviors extends Record<string, IBehaviorInstance> {
+	['MoveTo']: IMoveToBehaviorInstance
+}
+interface IsprLift extends ISpriteInstance {
+	instVars: IsprLiftVars;
+	behaviors: IsprLiftBehaviors;
+}
+
+interface IfamMoveableVars extends VariableType {
+	
+}
+interface IfamMoveableBehaviors extends Record<string, IBehaviorInstance> {
+	['DragDrop']: IBehaviorInstance
+}
+interface IfamMoveable extends ISpriteInstance {
+	instVars: IfamMoveableVars;
+	behaviors: IfamMoveableBehaviors;
+}
+
+interface IsprGroundFloorVars extends VariableType {
+	
+}
+interface IsprGroundFloorBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IsprGroundFloor extends ISpriteInstance {
+	instVars: IsprGroundFloorVars;
+	behaviors: IsprGroundFloorBehaviors;
+}
+
+interface IsprRoomVars extends VariableType {
+	
+}
+interface IsprRoomBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IsprRoom extends ISpriteInstance {
+	instVars: IsprRoomVars;
+	behaviors: IsprRoomBehaviors;
 }
 
 interface IsprLiftShaftVars extends VariableType {

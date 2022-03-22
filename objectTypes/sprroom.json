@@ -41,13 +41,165 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5408692,
+						"imageSpriteId": 9316880,
+						"collisionPoly": {
+							"points": [
+								0.0125,
+								0.025,
+								0.9875,
+								0.025,
+								0.9875,
+								0.975,
+								0.0125,
+								0.975
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
 				"sid": 429584419930422,
 				"name": "foodCourt",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 40,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7554985,
+						"collisionPoly": {
+							"points": [
+								0.0125,
+								0.025,
+								0.9875,
+								0.025,
+								0.9875,
+								0.975,
+								0.0125,
+								0.975
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 485903881022101,
+				"name": "bathroom",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 40,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8051463,
+						"collisionPoly": {
+							"points": [
+								0.0125,
+								0.025,
+								0.9875,
+								0.025,
+								0.9875,
+								0.975,
+								0.0125,
+								0.975
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 940998686624701,
+				"name": "spawn",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 120,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 52159,
+						"collisionPoly": {
+							"points": [
+								0.0125,
+								0.025,
+								0.9875,
+								0.025,
+								0.9875,
+								0.975,
+								0.0125,
+								0.975
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 701440777394158,
+				"name": "flat",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 80,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8979149,
+						"collisionPoly": {
+							"points": [
+								0.0125,
+								0.025,
+								0.9875,
+								0.025,
+								0.9875,
+								0.975,
+								0.0125,
+								0.975
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 186505458099376,
+				"name": "office",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
