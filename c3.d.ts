@@ -1,5 +1,5 @@
 // NOTE: This definition file is auto generated - any changes you make will not be saved
-// 21/03/2022 18:47:33
+// 29/03/2022 17:42:40
 
 declare function runOnStartup(cb: (runtime: IRuntime) => void): void;
 
@@ -53,6 +53,7 @@ interface IRuntimeObjects {
 	['sprDragger']: IObjectClass<IsprDragger>;
 	['Mouse']: IObjectClass<IMouse>;
 	['Keyboard']: IObjectClass<IKeyboard>;
+	['famRooms']: IObjectClass<IfamRooms>;
 	['sprLift']: IObjectClass<IsprLift>;
 	['famMoveable']: IObjectClass<IfamMoveable>;
 	['sprGroundFloor']: IObjectClass<IsprGroundFloor>;
@@ -304,6 +305,17 @@ interface IKeyboardBehaviors extends Record<string, IBehaviorInstance> {
 interface IKeyboard extends IKeyboardObjectType {
 	instVars: IKeyboardVars;
 	behaviors: IKeyboardBehaviors;
+}
+
+interface IfamRoomsVars extends VariableType {
+	
+}
+interface IfamRoomsBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IfamRooms extends ISpriteInstance {
+	instVars: IfamRoomsVars;
+	behaviors: IfamRoomsBehaviors;
 }
 
 interface IsprLiftVars extends VariableType {

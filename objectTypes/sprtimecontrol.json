@@ -88,6 +88,29 @@
 				"repeatCount": 1,
 				"repeatTo": 0,
 				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 301,
+						"height": 206,
+						"originX": 0.5016611295681063,
+						"originY": 0.5072815533980582,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9449039,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 644389526854731,
+				"name": "build",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
 			}
 		],
 		"subfolders": []

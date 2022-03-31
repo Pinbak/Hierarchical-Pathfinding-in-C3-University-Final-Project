@@ -3290,7 +3290,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 78,
+						"x": 138,
 						"y": 21,
 						"width": 16.176470588235293,
 						"height": 17.615853658536587,
@@ -3319,7 +3319,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 102,
+						"x": 162,
 						"y": 21,
 						"width": 16.33986928104575,
 						"height": 19.097560975609756,
@@ -3348,12 +3348,41 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 128,
+						"x": 188,
 						"y": 21,
 						"width": 23,
 						"height": 18,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sprTimeControl",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "build",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 81,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 94,
+						"y": 23,
+						"width": 48,
+						"height": 33,
+						"originX": 0.5016611295681063,
+						"originY": 0.5072815533980582,
 						"color": [
 							1,
 							1,

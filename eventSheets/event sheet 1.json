@@ -42,26 +42,11 @@
 						{
 							"id": "set-enabled",
 							"objectClass": "famMoveable",
-							"sid": 997851302747219,
+							"sid": 722778112357179,
 							"behaviorType": "DragDrop",
 							"parameters": {
-								"state": "enabled"
+								"state": "disabled"
 							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "sprNodeVisualizer",
-							"sid": 457575340665835
-						},
-						{
-							"id": "destroy",
-							"objectClass": "sprNodeConnector",
-							"sid": 278220738638004
-						},
-						{
-							"id": "destroy",
-							"objectClass": "txtLabel",
-							"sid": 674885566881746
 						}
 					],
 					"sid": 765717281896308
@@ -131,6 +116,39 @@
 						}
 					],
 					"sid": 278877801235730
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "sprTimeControl",
+							"sid": 420441221784385,
+							"parameters": {
+								"animation": "\"build\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 174162574863825,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "famMoveable",
+							"sid": 137324147891589,
+							"behaviorType": "DragDrop",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 544608279489027
 				}
 			]
 		},

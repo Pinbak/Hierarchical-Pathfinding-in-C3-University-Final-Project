@@ -41,11 +41,9 @@ export function onMouseDown(e, runtime){
         for (const timeControl of runtime.objects.sprTimeControl.getAllInstances()){
             if (timeControl.containsPoint(runtime.mouse.getMouseX(),runtime.mouse.getMouseY())){
                 if (timeControl.animationName === "pause"){
-                    evacuateBuilding(runtime);
                     Globals.SPEED = 0;
                     clearInterval(Globals.TIMER);
                     clearInterval(Globals.LIFTTIMER);
-                    Globals.JUST_BUILT = true;
                 }else if (timeControl.animationName === "play"){
                     Globals.SPEED = 1;
                     clearInterval(Globals.TIMER);
@@ -60,6 +58,12 @@ export function onMouseDown(e, runtime){
                     clearInterval(Globals.LIFTTIMER);
                     Globals.LIFTTIMER = setInterval(() => ActionSelection.moveLifts(runtime), 50);
                     justBuilt(runtime);
+                }else if (timeControl.animationName === "build"){
+                    Globals.SPEED = 0;
+                    clearInterval(Globals.TIMER);
+                    clearInterval(Globals.LIFTTIMER);
+                    evacuateBuilding(runtime);
+                    Globals.JUST_BUILT = true;
                 }
                 return;
             }
