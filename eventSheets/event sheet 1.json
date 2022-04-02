@@ -284,6 +284,28 @@
 				}
 			],
 			"sid": 490816843748746
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 277914893792684
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "famMoveable",
+					"sid": 833130682770987,
+					"behaviorType": "DragDrop",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 733970672197991
 		}
 	],
 	"sid": 198850612041877

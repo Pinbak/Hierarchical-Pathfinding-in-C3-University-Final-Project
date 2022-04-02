@@ -1,0 +1,109 @@
+{
+	"name": "buildingButton",
+	"plugin-id": "Sprite",
+	"sid": 550040779513709,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 349,
+						"height": 205,
+						"originX": 0.498567335243553,
+						"originY": 0.5097560975609756,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5581154,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 348,
+						"height": 205,
+						"originX": 0.498567335243553,
+						"originY": 0.5097560975609756,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4719342,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 348,
+						"height": 206,
+						"originX": 0.498567335243553,
+						"originY": 0.5097560975609756,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4497161,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 348,
+						"height": 206,
+						"originX": 0.498567335243553,
+						"originY": 0.5097560975609756,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2454869,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 348,
+						"height": 205,
+						"originX": 0.498567335243553,
+						"originY": 0.5097560975609756,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4062539,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 348,
+						"height": 206,
+						"originX": 0.498567335243553,
+						"originY": 0.5097560975609756,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2171746,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 348,
+						"height": 205,
+						"originX": 0.498567335243553,
+						"originY": 0.5097560975609756,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6205130,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 782116654133752,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

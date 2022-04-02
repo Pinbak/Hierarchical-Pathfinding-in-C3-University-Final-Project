@@ -1,5 +1,5 @@
 // NOTE: This definition file is auto generated - any changes you make will not be saved
-// 29/03/2022 17:42:40
+// 01/04/2022 23:43:41
 
 declare function runOnStartup(cb: (runtime: IRuntime) => void): void;
 
@@ -51,8 +51,10 @@ interface IRuntimeObjects {
 	['sprNodeConnector']: IObjectClass<IsprNodeConnector>;
 	['sprGround']: IObjectClass<IsprGround>;
 	['sprDragger']: IObjectClass<IsprDragger>;
+	['sprBuildOutline']: IObjectClass<IsprBuildOutline>;
 	['Mouse']: IObjectClass<IMouse>;
 	['Keyboard']: IObjectClass<IKeyboard>;
+	['buildingButton']: IObjectClass<IbuildingButton>;
 	['famRooms']: IObjectClass<IfamRooms>;
 	['sprLift']: IObjectClass<IsprLift>;
 	['famMoveable']: IObjectClass<IfamMoveable>;
@@ -285,6 +287,17 @@ interface IsprDragger extends ISpriteInstance {
 	behaviors: IsprDraggerBehaviors;
 }
 
+interface IsprBuildOutlineVars extends VariableType {
+	
+}
+interface IsprBuildOutlineBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IsprBuildOutline extends ISpriteInstance {
+	instVars: IsprBuildOutlineVars;
+	behaviors: IsprBuildOutlineBehaviors;
+}
+
 interface IMouseVars extends VariableType {
 	
 }
@@ -305,6 +318,17 @@ interface IKeyboardBehaviors extends Record<string, IBehaviorInstance> {
 interface IKeyboard extends IKeyboardObjectType {
 	instVars: IKeyboardVars;
 	behaviors: IKeyboardBehaviors;
+}
+
+interface IbuildingButtonVars extends VariableType {
+	
+}
+interface IbuildingButtonBehaviors extends Record<string, IBehaviorInstance> {
+	
+}
+interface IbuildingButton extends ISpriteInstance {
+	instVars: IbuildingButtonVars;
+	behaviors: IbuildingButtonBehaviors;
 }
 
 interface IfamRoomsVars extends VariableType {

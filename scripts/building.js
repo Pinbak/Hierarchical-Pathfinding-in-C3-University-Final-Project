@@ -9,6 +9,14 @@ export function onMouseDown(e, runtime){
 
     // destroy a building (the highest z elevated instance) if right click pressed
     if (e.button === 2){
+        console.log(runtime.layout.getLayer("ui"));
+        // if trying to place a building, cancel it
+        if (Globals.IS_PLACING){
+            Globals.IS_PLACING = false;
+            runtime.objects.sprBuildOutline.getFirstInstance().destroy();
+            return;
+        }
+    
         if (Globals.SPEED === 0){
             let highestInstance = "";
             let c = 0
@@ -37,47 +45,74 @@ export function onMouseDown(e, runtime){
     }
     // check for left mouse button
     if (e.button === 0){
+        const mouseX = runtime.mouse.getMouseX();
+        const mouseY = runtime.mouse.getMouseY();
+
         // controlling time
-        for (const timeControl of runtime.objects.sprTimeControl.getAllInstances()){
-            if (timeControl.containsPoint(runtime.mouse.getMouseX(),runtime.mouse.getMouseY())){
-                if (timeControl.animationName === "pause"){
-                    Globals.SPEED = 0;
-                    clearInterval(Globals.TIMER);
-                    clearInterval(Globals.LIFTTIMER);
-                }else if (timeControl.animationName === "play"){
-                    Globals.SPEED = 1;
-                    clearInterval(Globals.TIMER);
-                    Globals.TIMER = setInterval(() => ActionSelection.addTime(runtime), 300);
-                    clearInterval(Globals.LIFTTIMER);
-                    Globals.LIFTTIMER = setInterval(() => ActionSelection.moveLifts(runtime), 300);
-                    justBuilt(runtime);
-                }else if (timeControl.animationName === "faster"){
-                    Globals.SPEED = 3;
-                    clearInterval(Globals.TIMER);
-                    Globals.TIMER = setInterval(() => ActionSelection.addTime(runtime), 50);
-                    clearInterval(Globals.LIFTTIMER);
-                    Globals.LIFTTIMER = setInterval(() => ActionSelection.moveLifts(runtime), 50);
-                    justBuilt(runtime);
-                }else if (timeControl.animationName === "build"){
-                    Globals.SPEED = 0;
-                    clearInterval(Globals.TIMER);
-                    clearInterval(Globals.LIFTTIMER);
-                    evacuateBuilding(runtime);
-                    Globals.JUST_BUILT = true;
+        if (!Globals.IS_PLACING){
+            for (const timeControl of runtime.objects.sprTimeControl.getAllInstances()){
+                if (timeControl.containsPoint(mouseX,mouseY)){
+                    if (timeControl.animationName === "pause"){
+                        Globals.SPEED = 0;
+                        clearInterval(Globals.TIMER);
+                        clearInterval(Globals.LIFTTIMER);
+                        runtime.layout.getLayer("buildingButtons").isVisible = false;
+                    }else if (timeControl.animationName === "play"){
+                        Globals.SPEED = 1;
+                        clearInterval(Globals.TIMER);
+                        Globals.TIMER = setInterval(() => ActionSelection.addTime(runtime), 300);
+                        clearInterval(Globals.LIFTTIMER);
+                        Globals.LIFTTIMER = setInterval(() => ActionSelection.moveLifts(runtime), 300);
+                        justBuilt(runtime);
+                        runtime.layout.getLayer("buildingButtons").isVisible = false;
+                    }else if (timeControl.animationName === "faster"){
+                        Globals.SPEED = 3;
+                        clearInterval(Globals.TIMER);
+                        Globals.TIMER = setInterval(() => ActionSelection.addTime(runtime), 50);
+                        clearInterval(Globals.LIFTTIMER);
+                        Globals.LIFTTIMER = setInterval(() => ActionSelection.moveLifts(runtime), 50);
+                        justBuilt(runtime);
+                        runtime.layout.getLayer("buildingButtons").isVisible = false;
+                    }else if (timeControl.animationName === "build"){
+                        Globals.SPEED = 0;
+                        clearInterval(Globals.TIMER);
+                        clearInterval(Globals.LIFTTIMER);
+                        evacuateBuilding(runtime);
+                        Globals.JUST_BUILT = true;
+                        runtime.layout.getLayer("buildingButtons").isVisible = true;
+                    }
+                    return;
                 }
-                return;
             }
         }
-
+        // adding new parts to the building
+        if (Globals.IS_PLACING){
+            const outline = runtime.objects.sprBuildOutline.getFirstInstance();
+            placeBuilding(Globals.LAST_SELECTED, runtime, outline.width, outline.height);
+        }
+        if (Globals.SPEED === 0){
+            for (const buildingButton of runtime.objects.buildingButton.getAllInstances()){
+                if (buildingButton.containsPoint(mouseX,mouseY)){
+                    if (!Globals.IS_PLACING){
+                    const outline = runtime.objects.sprBuildOutline.createInstance("characters", mouseX, mouseY, false);
+                    outline.width = returnBuildingWidth(runtime, buildingButton.animationFrame);
+                    outline.height = returnBuildingHeight(buildingButton.animationFrame);
+                    Globals.IS_PLACING = true;
+                    Globals.LAST_SELECTED = buildingButton.animationFrame;
+                    }
+                }
+            }
+        }
+        
         // logging information about something
         for (const person of runtime.objects.sprPerson.getAllInstances()){
-            if (person.containsPoint(runtime.mouse.getMouseX(),runtime.mouse.getMouseY())){
+            if (person.containsPoint(mouseX,mouseY)){
                 console.log(person);
                 return;
             }
         }
         for (const room of runtime.objects.sprRoom.getAllInstances()){
-            if (room.containsPoint(runtime.mouse.getMouseX(),runtime.mouse.getMouseY())){
+            if (room.containsPoint(mouseX,mouseY)){
                 console.log(room);
                 return;
             }
@@ -131,6 +166,41 @@ function justBuilt(runtime){
     if (Globals.JUST_BUILT){
         Globals.JUST_BUILT = false;
 
+        // if buildings are in invalid locations
+        let overlap = false;
+        for (const liftShaft of runtime.objects.sprLiftShaft.getAllInstances()){
+            overlap = false;
+            for (const building of runtime.objects.sprBuilding.getAllInstances()){
+                if (liftShaft.testOverlap(building)){
+                    overlap = true;
+                }
+            }
+            if (!overlap){
+                liftShaft.destroy();
+            }
+        }
+        for (const lift of runtime.objects.sprLift.getAllInstances()){
+            overlap = false;
+            for (const liftShaft of runtime.objects.sprLiftShaft.getAllInstances()){
+                if (lift.testOverlap(liftShaft)){
+                    overlap = true;
+                }
+            }
+            if (!overlap){
+                lift.destroy();
+            }
+        }
+        for (const room of runtime.objects.sprRoom.getAllInstances()){
+            overlap = false;
+            for (const building of runtime.objects.sprBuilding.getAllInstances()){
+                if (room.testOverlap(building)){
+                    overlap = true;
+                }
+            }
+            if (!overlap){
+                room.destroy();
+            }
+        }
         
         resetGlobal()
         // generate the graph
@@ -148,13 +218,12 @@ function justBuilt(runtime){
         ActionSelection.checkForHomeless(runtime);
 
         // checks for problems in positioning and queue's needing to be updated again
-        let overlap = false;
         let roomX = -10;
         let roomY = -10;
         
         // if they are waiting for the lift, the lift needs to be told again
         for (const person of runtime.objects.sprPerson.getAllInstances()){
-            
+            person.currentState = "idle";
             if (person.type === "resident" || (person.type === "worker" && (Globals.TIME < 1110 && Globals.TIME > 480))){
                 Searching.astar(Globals.graph, person.currentRoom, person.primaryBuilding, person, runtime);
             }
@@ -201,39 +270,38 @@ function justBuilt(runtime){
     }
 }
 
-export function placeBuilding(e, runtime){
+export function placeBuilding(value, runtime, width, height){
     if (Globals.SPEED === 0){
         const mouseX = runtime.mouse.getMouseX();
         const mouseY = runtime.mouse.getMouseY();
         let built = false;
         let tempBuilding = "";
         // place building
-        if (e.key === "1"){
+        if (value === 0){
+            // set width to the last one created
+            let oldWidth = getLastInstanceWidth(runtime.objects.sprBuilding.getAllInstances());
             tempBuilding = runtime.objects.sprBuilding.createInstance("building", mouseX, mouseY, false);
             built = true;
-            tempBuilding.width = 30;
-        }else if (e.key === "2"){
+        }else if (value === 1){
             tempBuilding = runtime.objects.sprLiftShaft.createInstance("rooms", mouseX, mouseY, false);
             built = true;
-            tempBuilding.height = 40;
             tempBuilding.moveToBottom();
-        }else if (e.key === "3"){
+        }else if (value === 2){
             tempBuilding = runtime.objects.sprLift.createInstance("rooms", mouseX, mouseY, false);
             built = true;
-            tempBuilding.height = 40;
-        }else if (e.key === "4"){
+        }else if (value === 3){
             tempBuilding = runtime.objects.sprRoom.createInstance("rooms", mouseX, mouseY, false);
             built = true;
             tempBuilding.setAnimation("flat", "beginning")
-        }else if (e.key === "5"){
+        }else if (value === 4){
             tempBuilding = runtime.objects.sprRoom.createInstance("rooms", mouseX, mouseY, false);
             built = true;
             tempBuilding.setAnimation("office", "beginning")
-        }else if (e.key === "6"){
+        }else if (value === 5){
             tempBuilding = runtime.objects.sprRoom.createInstance("rooms", mouseX, mouseY, false);
             built = true;
             tempBuilding.setAnimation("bathroom", "beginning")
-        }else if (e.key === "7"){
+        }else if (value === 6){
             tempBuilding = runtime.objects.sprRoom.createInstance("rooms", mouseX, mouseY, false);
             built = true;
             tempBuilding.setAnimation("foodCourt", "beginning")
@@ -241,6 +309,8 @@ export function placeBuilding(e, runtime){
         if (built){
             tempBuilding.x = (Math.round(tempBuilding.x/Globals.GRID_SIZE_X))*Globals.GRID_SIZE_X;
             tempBuilding.y = (Math.round(tempBuilding.y/Globals.GRID_SIZE_Y))*Globals.GRID_SIZE_Y;
+            tempBuilding.width = width;
+            tempBuilding.height = height;
         }
 
     }
@@ -327,3 +397,33 @@ function checkBelow(runtime, mouseX, mouseY){
     }
 }
 */
+
+function getLastInstanceWidth(objects){
+    let last = "";
+    for (const object of objects){
+        last = object;
+    }
+    return last.width;
+}
+
+function returnBuildingWidth(runtime, value){
+    if (value === 0){
+        return getLastInstanceWidth(runtime.objects.sprBuilding.getAllInstances());
+    }else if (value === 1){
+        return 30;
+    }else if (value === 2){
+        return 30;
+    }else if (value === 3){
+        return 120;
+    }else if (value === 4){
+        return 80;
+    }else if (value === 5){
+        return 40;
+    }else if (value === 6){
+        return 80;
+    }
+}
+
+function returnBuildingHeight(value){
+    return 40;
+}

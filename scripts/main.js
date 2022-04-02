@@ -34,7 +34,7 @@ async function OnBeforeProjectStart(runtime)
 	// mouse wheel
 	runtime.addEventListener("wheel", e => Building.expandRoom(e, runtime));
 	// keyboard interaction
-	runtime.addEventListener("keydown", e => Building.placeBuilding(e, runtime));
+	//runtime.addEventListener("keydown", e => Building.placeBuilding(e, runtime));
 	// waitinig time for the lifts before they move again
 	Globals.LIFTTIMER = setInterval(() => ActionSelection.moveLifts(runtime), 300);
 	// moving time along
@@ -83,4 +83,13 @@ function Tick(runtime)
 		}
 	}
 	*/
+	
+	// if user is currently trying to build
+	if (Globals.IS_PLACING){
+		const mouseX = runtime.mouse.getMouseX();
+        const mouseY = runtime.mouse.getMouseY(); 
+		const buildOutlineInstance = runtime.objects.sprBuildOutline.getFirstInstance();
+		buildOutlineInstance.x = (Math.round(mouseX/Globals.GRID_SIZE_X))*Globals.GRID_SIZE_X;
+		buildOutlineInstance.y = (Math.round(mouseY/Globals.GRID_SIZE_Y))*Globals.GRID_SIZE_Y;
+	}
 }

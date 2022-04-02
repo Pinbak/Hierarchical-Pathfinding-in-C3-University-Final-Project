@@ -9,6 +9,10 @@ const Globals = {
     TIMER: "",
     LIFTTIMER: "",
     JUST_BUILT: false,
+    CENTER_X: 320,
+    CENTER_Y: 240,
+    IS_PLACING: false,
+    LAST_SELECTED: 0,
 
     // graph object storing the nodes and corresponding connecting nodes
     graph: {},

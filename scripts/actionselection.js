@@ -255,6 +255,7 @@ function updateCostforQueue(liftShaft, floor, amount){
 export function goToNextNode(runtime, person){
     while (person.currentPath.length !== 0){
         let nextNode = person.currentPath[0]
+        // if the next node does not exist anymore, make the agent lost
         if (!Globals.nodes.hasOwnProperty(nextNode)){person.currentState="lost";break;}
         // if they have arrived
         if (person.currentPath.length === 1){

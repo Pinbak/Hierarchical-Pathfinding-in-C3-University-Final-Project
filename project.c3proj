@@ -105,7 +105,9 @@
 			"txtTime",
 			"sprTimeControl",
 			"sprDragger",
-			"Keyboard"
+			"Keyboard",
+			"buildingButton",
+			"sprBuildOutline"
 		],
 		"subfolders": []
 	},
