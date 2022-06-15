@@ -7,7 +7,7 @@ import * as Ut from "./ut.js";
 // what happens when the mouse is clicked
 export function onMouseDown(e, runtime){
 
-    // destroy a building (the highest z elevated instance) if right click pressed
+    // if right click pressed
     if (e.button === 2){
         console.log(runtime.layout.getLayer("ui"));
         // if trying to place a building, cancel it

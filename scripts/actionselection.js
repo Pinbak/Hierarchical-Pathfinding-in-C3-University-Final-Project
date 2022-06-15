@@ -528,7 +528,7 @@ export function checkSchedule(runtime){
 
 }
 
-// if an event is checked, then check requirements and activate is possible
+// if an event is checked, then check requirements and activate if possible
 function updateTasks(runtime, tasks, type){
     for (const person of runtime.objects.sprPerson.getAllInstances()){
         if (person.type === type){

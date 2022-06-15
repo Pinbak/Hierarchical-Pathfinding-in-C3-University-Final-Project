@@ -62,6 +62,7 @@ export function astar(graph, start, dest, person, runtime){
       if (current === newDest){
          //console.log("A* Path: " + reconstructPath(cameFrom, current, start, dest));
          person.currentPath = reconstructPath(cameFrom, current, start, dest);
+         //console.log(person.currentPath);
          // send the person on the path
          person.currentState = "moving";
          ActionSelection.goToNextNode(runtime, person);
@@ -171,16 +172,6 @@ function returnLowestFScore(openSet, fScore){
    return node;
 }
 
-function returnWeight(graph, currentNode, otherNode){
-   let localList = graph[currentNode];
-   for (const i of localList){
-      console.log(i)
-      if (i === otherNode){
-         return graph[currentNode][1];
-      }
-   }
-}
-
 function returnCost(node, dest){
    return Ut.distanceTo(Globals.nodes[node][1],Globals.nodes[node][2],Globals.nodes[dest][1],Globals.nodes[dest][2]);
 }
@@ -225,3 +216,13 @@ export function astar(graph, start, dest){
    return
 }
 */
+//Unused function
+function returnWeight(graph, currentNode, otherNode){
+   let localList = graph[currentNode];
+   for (const i of localList){
+      console.log(i)
+      if (i === otherNode){
+         return graph[currentNode][1];
+      }
+   }
+}
