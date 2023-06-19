@@ -9,6 +9,7 @@ The project runs in Construct 3 and was written in JavaScript.
 ## Table of Contents
 - [Features](#features)
 - [Documentation](#documentation)
+- [Languages](#languages)
 
 ## Features
 
@@ -19,3 +20,7 @@ The project runs in Construct 3 and was written in JavaScript.
 ## Documentation
 
 The process has been documented and can be found in the PDF called documentation.
+
+## Languages
+
+JavaScript was used written in VSCode.
